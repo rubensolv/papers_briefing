@@ -29,7 +29,7 @@
   
       ,"page1": {
           "title": "About Me",
-          "content": "I’m a doctoral student at the Universidade Federal de Viçosa (UFV), Minas Gerais – Brazil, under the guidance of Prof. Levi Lelis in the area of Artificial Intelligence for Games. Received a specialization course in Analysis and Management of Information Systems from the Instituto Federal Fluminense and BS in Computer Science from Universidade Candido Mendes. . This is where you put the contents of your About page. Like all your pages, it’s in Markdown format. . This website is powered by fastpages 1. . a blogging platform that natively supports Jupyter notebooks in addition to other formats. &#8617; . |",
+          "content": "I’m a doctoral student 1 at the Universidade Federal de Viçosa (UFV), Minas Gerais – Brazil, under the guidance of Prof. Levi Lelis in the area of Artificial Intelligence for Games. Received a specialization course in Analysis and Management of Information Systems from the Instituto Federal Fluminense and BS in Computer Science from Universidade Candido Mendes. . https://rubensoliveiramoraes.wordpress.com/. &#8617; . |",
           "url": "https://rubensolv.github.io/papers_briefing/about/",
           "relUrl": "/about/",
           "date": ""
