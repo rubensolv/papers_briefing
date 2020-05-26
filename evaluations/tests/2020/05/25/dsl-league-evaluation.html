@@ -112,6 +112,7 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Details-around-the-charts">Details around the charts </a></li>
 <li class="toc-entry toc-h2"><a href="#Map-Battle">Map Battle </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#Quantity-of-Iterations">Quantity of Iterations </a></li>
@@ -125,6 +126,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#Map-9x8">Map 9x8 </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#Quantity-of-Iterations">Quantity of Iterations </a></li>
+<li class="toc-entry toc-h3"><a href="#Detailed-Charts">Detailed Charts </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#Map-16x16">Map 16x16 </a>
@@ -153,6 +155,23 @@ window.onload = wrap_img;
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Details-around-the-charts">
+<a class="anchor" href="#Details-around-the-charts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Details around the charts<a class="anchor-link" href="#Details-around-the-charts"> </a>
+</h2>
+<p>Each group of charts is interactive, it means that you can click on the bars. They have tooltips in each bar with code, test, and the agent type associated with each player tested.</p>
+<p>Agent type can be:</p>
+<ul>
+<li>MP = Main Player </li>
+<li>ME = Main Exploiter</li>
+<li>LE = League Exploiter.</li>
+</ul>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -488,6 +507,15 @@ window.onload = wrap_img;
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Detailed-Charts">
+<a class="anchor" href="#Detailed-Charts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Detailed Charts<a class="anchor-link" href="#Detailed-Charts"> </a>
+</h3>
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -500,28 +528,6 @@ window.onload = wrap_img;
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#collapse-hide</span>
 <span class="n">dt9_8</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"/home/rubens/papers_briefing/csvs/map9x8.csv"</span><span class="p">)</span>
-<span class="c1">#dt9_8.head()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-    </details>
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<details class="description">
-      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
-        <p></p>
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#collapse-hide</span>
 <span class="n">selector</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_single</span><span class="p">(</span><span class="n">empty</span><span class="o">=</span><span class="s1">'all'</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">'Player'</span><span class="p">])</span>
 <span class="n">l</span> <span class="o">=</span> <span class="n">dt9_8</span><span class="p">[</span><span class="s1">'Player'</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 <span class="n">color_scale</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="n">l</span><span class="p">,</span><span class="n">scheme</span><span class="o">=</span><span class="s2">"category20b"</span><span class="p">)</span>
@@ -532,15 +538,16 @@ window.onload = wrap_img;
 
 <span class="n">points</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">(</span><span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">'Player:N'</span><span class="p">),</span>
-    <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">'TOTAL:Q'</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">'TOTAL:Q'</span><span class="p">,</span>            
             <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="nb">max</span><span class="p">(</span><span class="n">dt9_8</span><span class="p">[</span><span class="s1">'TOTAL'</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">())])),</span>
+    <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s1">'Test:N'</span><span class="p">,</span><span class="s1">'Type:N'</span><span class="p">],</span>
     <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span>
                         <span class="s1">'Player:N'</span><span class="p">,</span>
                         <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s1">'lightgray'</span><span class="p">),</span>
                         <span class="n">scale</span><span class="o">=</span><span class="n">color_scale</span><span class="p">),</span>
 <span class="p">)</span>
 
-<span class="n">hists</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">(</span><span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+<span class="n">hists</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">(</span><span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">'Player:N'</span><span class="p">),</span>
     <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">'STT:Q'</span><span class="p">,</span>
             <span class="n">stack</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -555,7 +562,7 @@ window.onload = wrap_img;
     <span class="n">height</span><span class="o">=</span><span class="mi">200</span>
 <span class="p">)</span>
 
-<span class="n">hists2</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">(</span><span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+<span class="n">hists2</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">(</span><span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">'Player:N'</span><span class="p">),</span>
     <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">'LIR:Q'</span><span class="p">,</span>
             <span class="n">stack</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -616,12 +623,12 @@ window.onload = wrap_img;
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 
-<div id="altair-viz-1c0a16537e9345c5b3572a326145ef5f"></div>
+<div id="altair-viz-9e2ae2ef912f4933aab8b45536991cda"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-1c0a16537e9345c5b3572a326145ef5f") {
-      outputDiv = document.getElementById("altair-viz-1c0a16537e9345c5b3572a326145ef5f");
+    if (outputDiv.id !== "altair-viz-9e2ae2ef912f4933aab8b45536991cda") {
+      outputDiv = document.getElementById("altair-viz-9e2ae2ef912f4933aab8b45536991cda");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -663,7 +670,7 @@ window.onload = wrap_img;
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "vconcat": [{"mark": {"type": "bar", "filled": true, "size": 60}, "encoding": {"color": {"condition": {"type": "nominal", "field": "Player", "scale": {"domain": ["P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9", "P10", "P11", "P12"], "scheme": "category20b"}, "selection": "selector065"}, "value": "lightgray"}, "x": {"type": "nominal", "field": "Player"}, "y": {"type": "quantitative", "field": "TOTAL", "scale": {"domain": [0, 31.5]}}}, "height": 200, "selection": {"selector065": {"type": "single", "empty": "all", "fields": ["Player"]}}, "width": 800}, {"hconcat": [{"mark": {"type": "bar", "opacity": 0.5, "thickness": 100}, "encoding": {"color": {"type": "nominal", "field": "Player", "scale": {"domain": ["P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9", "P10", "P11", "P12"], "scheme": "category20b"}}, "tooltip": [{"type": "nominal", "field": "Code"}], "x": {"type": "nominal", "field": "Player"}, "y": {"type": "quantitative", "field": "STT", "scale": {"domain": [0, 10]}, "stack": null}}, "height": 200, "selection": {"selector065": {"type": "single", "empty": "all", "fields": ["Player"]}}, "transform": [{"filter": {"selection": "selector065"}}], "width": 160}, {"mark": {"type": "bar", "opacity": 0.5, "thickness": 100}, "encoding": {"color": {"type": "nominal", "field": "Player", "scale": {"domain": ["P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9", "P10", "P11", "P12"], "scheme": "category20b"}}, "tooltip": [{"type": "nominal", "field": "Code"}], "x": {"type": "nominal", "field": "Player"}, "y": {"type": "quantitative", "field": "LIR", "scale": {"domain": [0, 10]}, "stack": null}}, "height": 200, "selection": {"selector065": {"type": "single", "empty": "all", "fields": ["Player"]}}, "transform": [{"filter": {"selection": "selector065"}}], "width": 160}, {"mark": {"type": "bar", "opacity": 1.0, "thickness": 80}, "encoding": {"color": {"type": "nominal", "field": "Player", "scale": {"domain": ["P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9", "P10", "P11", "P12"], "scheme": "category20b"}}, "tooltip": [{"type": "nominal", "field": "Code"}], "x": {"type": "nominal", "field": "Player"}, "y": {"type": "quantitative", "field": "NS", "scale": {"domain": [0, 10]}, "stack": null}}, "height": 200, "selection": {"selector065": {"type": "single", "empty": "all", "fields": ["Player"]}}, "transform": [{"filter": {"selection": "selector065"}}], "width": 160}, {"mark": {"type": "bar", "opacity": 1.0, "thickness": 80}, "encoding": {"color": {"type": "nominal", "field": "Player", "scale": {"domain": ["P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9", "P10", "P11", "P12"], "scheme": "category20b"}}, "tooltip": [{"type": "nominal", "field": "Code"}], "x": {"type": "nominal", "field": "Player"}, "y": {"type": "quantitative", "field": "A3N", "scale": {"domain": [0, 10]}, "stack": null}}, "height": 200, "selection": {"selector065": {"type": "single", "empty": "all", "fields": ["Player"]}}, "transform": [{"filter": {"selection": "selector065"}}], "width": 160}]}], "data": {"name": "data-d7f388355fd1e9d24de8201d18c5cd55"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-d7f388355fd1e9d24de8201d18c5cd55": [{"Player": "P1", "STT": 2.5, "LIR": 0.0, "NS": 0.0, "A3N": 5.0, "TOTAL": 7.5, "Type": null, "Code": "train(Worker,19,EnemyDir)"}, {"Player": "P2", "STT": 5.0, "LIR": 1.0, "NS": 2.5, "A3N": 6.0, "TOTAL": 14.5, "Type": null, "Code": "attack(Worker,closest) train(Worker,6,Left) build(Base,3,Left) harvest(6)"}, {"Player": "P3", "STT": 1.0, "LIR": 0.0, "NS": 0.0, "A3N": 0.0, "TOTAL": 1.0, "Type": null, "Code": "harvest(2) for(u) (attack(Worker,closest,u) harvest(7,u) train(Worker,7,Left))"}, {"Player": "P4", "STT": 3.0, "LIR": 0.0, "NS": 1.0, "A3N": 3.0, "TOTAL": 7.0, "Type": null, "Code": "train(Worker,4,EnemyDir) for(u) (build(Base,3,Right,u) attack(Worker,closest,u) harvest(4,u))"}, {"Player": "P5", "STT": 8.0, "LIR": 0.0, "NS": 4.5, "A3N": 4.0, "TOTAL": 16.5, "Type": null, "Code": "for(u) (attack(Worker,closest,u) train(Worker,5,Left) build(Barrack,1,Right,u) harvest(9,u) moveaway(Worker,u))"}, {"Player": "P6", "STT": 0.0, "LIR": 0.0, "NS": 0.0, "A3N": 0.0, "TOTAL": 0.0, "Type": null, "Code": "for(u) (harvest(4,u) attack(Worker,closest,u) harvest(5,u) build(Base,2,Left,u)) for(u) (train(Worker,7,Right) harvest(5,u))"}, {"Player": "P7", "STT": 0.0, "LIR": 0.0, "NS": 0.0, "A3N": 4.0, "TOTAL": 4.0, "Type": null, "Code": "for(u) (harvest(8,u) moveaway(Worker,u) train(Worker,16,EnemyDir)) for(u) (build(Barrack,3,Up,u)) for(u) (attack(Worker,weakest,u))"}, {"Player": "P8", "STT": 0.0, "LIR": 0.0, "NS": 0.0, "A3N": 0.0, "TOTAL": 0.0, "Type": null, "Code": "for(u) (train(Worker,5,Up)) if(HaveQtdUnitsbyType(Ranged,8)) (build(Barrack,2,Right)) for(u) (attack(Worker,mostHealthy,u) harvest(8,u))"}, {"Player": "P9", "STT": 2.0, "LIR": 0.0, "NS": 0.0, "A3N": 0.0, "TOTAL": 2.0, "Type": null, "Code": "for(u) (train(Worker,5,Right)) for(u) (attack(Worker,lessHealthy,u) harvest(1,u) train(Ranged,13,Down) harvest(3,u) build(Barrack,2,Left,u))"}, {"Player": "P10", "STT": 0.0, "LIR": 0.0, "NS": 0.0, "A3N": 0.0, "TOTAL": 0.0, "Type": null, "Code": "for(u) (if(HaveUnitsToDistantToEnemy(Worker,4,u)) (build(Base,2,Down,u)) (harvest(1,u)) attack(Worker,lessHealthy,u) harvest(8,u)) for(u) (train(Worker,15,Right))"}, {"Player": "P11", "STT": 1.0, "LIR": 0.0, "NS": 0.0, "A3N": 0.0, "TOTAL": 1.0, "Type": null, "Code": "for(u) (train(Worker,4,Up) attack(Worker,lessHealthy,u) if(HaveQtdUnitsHarversting(1)) (build(Barrack,1,Down,u)) harvest(5,u) train(Heavy,3,EnemyDir) attack(Heavy,lessHealthy,u))"}, {"Player": "P12", "STT": 9.5, "LIR": 5.0, "NS": 7.0, "A3N": 10.0, "TOTAL": 31.5, "Type": null, "Code": "for(u) (train(Ranged,4,Up) harvest(6,u) train(Worker,6,Left)) build(Barrack,2,Right) attack(Ranged,closest) for(u) (moveToUnit(Worker,Ally,farthest,u)) moveToUnit(Ranged,Ally,lessHealthy)"}]}}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "vconcat": [{"mark": {"type": "bar", "filled": true, "size": 60}, "encoding": {"color": {"condition": {"type": "nominal", "field": "Player", "scale": {"domain": ["P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9", "P10", "P11", "P12"], "scheme": "category20b"}, "selection": "selector074"}, "value": "lightgray"}, "tooltip": [{"type": "nominal", "field": "Test"}, {"type": "nominal", "field": "Type"}], "x": {"type": "nominal", "field": "Player"}, "y": {"type": "quantitative", "field": "TOTAL", "scale": {"domain": [0, 31.5]}}}, "height": 200, "selection": {"selector074": {"type": "single", "empty": "all", "fields": ["Player"]}}, "width": 800}, {"hconcat": [{"mark": {"type": "bar", "opacity": 1.0, "thickness": 100}, "encoding": {"color": {"type": "nominal", "field": "Player", "scale": {"domain": ["P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9", "P10", "P11", "P12"], "scheme": "category20b"}}, "tooltip": [{"type": "nominal", "field": "Code"}], "x": {"type": "nominal", "field": "Player"}, "y": {"type": "quantitative", "field": "STT", "scale": {"domain": [0, 10]}, "stack": null}}, "height": 200, "selection": {"selector074": {"type": "single", "empty": "all", "fields": ["Player"]}}, "transform": [{"filter": {"selection": "selector074"}}], "width": 160}, {"mark": {"type": "bar", "opacity": 1.0, "thickness": 100}, "encoding": {"color": {"type": "nominal", "field": "Player", "scale": {"domain": ["P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9", "P10", "P11", "P12"], "scheme": "category20b"}}, "tooltip": [{"type": "nominal", "field": "Code"}], "x": {"type": "nominal", "field": "Player"}, "y": {"type": "quantitative", "field": "LIR", "scale": {"domain": [0, 10]}, "stack": null}}, "height": 200, "selection": {"selector074": {"type": "single", "empty": "all", "fields": ["Player"]}}, "transform": [{"filter": {"selection": "selector074"}}], "width": 160}, {"mark": {"type": "bar", "opacity": 1.0, "thickness": 80}, "encoding": {"color": {"type": "nominal", "field": "Player", "scale": {"domain": ["P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9", "P10", "P11", "P12"], "scheme": "category20b"}}, "tooltip": [{"type": "nominal", "field": "Code"}], "x": {"type": "nominal", "field": "Player"}, "y": {"type": "quantitative", "field": "NS", "scale": {"domain": [0, 10]}, "stack": null}}, "height": 200, "selection": {"selector074": {"type": "single", "empty": "all", "fields": ["Player"]}}, "transform": [{"filter": {"selection": "selector074"}}], "width": 160}, {"mark": {"type": "bar", "opacity": 1.0, "thickness": 80}, "encoding": {"color": {"type": "nominal", "field": "Player", "scale": {"domain": ["P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9", "P10", "P11", "P12"], "scheme": "category20b"}}, "tooltip": [{"type": "nominal", "field": "Code"}], "x": {"type": "nominal", "field": "Player"}, "y": {"type": "quantitative", "field": "A3N", "scale": {"domain": [0, 10]}, "stack": null}}, "height": 200, "selection": {"selector074": {"type": "single", "empty": "all", "fields": ["Player"]}}, "transform": [{"filter": {"selection": "selector074"}}], "width": 160}]}], "data": {"name": "data-7a5ff3af314d73d2ee992b9d22571ef9"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-7a5ff3af314d73d2ee992b9d22571ef9": [{"Player": "P1", "STT": 2.5, "LIR": 0.0, "NS": 0.0, "A3N": 5.0, "TOTAL": 7.5, "Test": "L9x8-31696699", "Type": "LE", "Code": "train(Worker,19,EnemyDir)"}, {"Player": "P2", "STT": 5.0, "LIR": 1.0, "NS": 2.5, "A3N": 6.0, "TOTAL": 14.5, "Test": "L9x8-31696699", "Type": "LE", "Code": "attack(Worker,closest) train(Worker,6,Left) build(Base,3,Left) harvest(6)"}, {"Player": "P3", "STT": 1.0, "LIR": 0.0, "NS": 0.0, "A3N": 0.0, "TOTAL": 1.0, "Test": "L9x8-31696705", "Type": "ME", "Code": "harvest(2) for(u) (attack(Worker,closest,u) harvest(7,u) train(Worker,7,Left))"}, {"Player": "P4", "STT": 3.0, "LIR": 0.0, "NS": 1.0, "A3N": 3.0, "TOTAL": 7.0, "Test": "L9x8-31696705", "Type": "LE", "Code": "train(Worker,4,EnemyDir) for(u) (build(Base,3,Right,u) attack(Worker,closest,u) harvest(4,u))"}, {"Player": "P5", "STT": 8.0, "LIR": 0.0, "NS": 4.5, "A3N": 4.0, "TOTAL": 16.5, "Test": "L9-42849689", "Type": "LE", "Code": "for(u) (attack(Worker,closest,u) train(Worker,5,Left) build(Barrack,1,Right,u) harvest(9,u) moveaway(Worker,u))"}, {"Player": "P6", "STT": 0.0, "LIR": 0.0, "NS": 0.0, "A3N": 0.0, "TOTAL": 0.0, "Test": "L9-42849689", "Type": "MP", "Code": "for(u) (harvest(4,u) attack(Worker,closest,u) harvest(5,u) build(Base,2,Left,u)) for(u) (train(Worker,7,Right) harvest(5,u))"}, {"Player": "P7", "STT": 0.0, "LIR": 0.0, "NS": 0.0, "A3N": 4.0, "TOTAL": 4.0, "Test": "L9-42849689", "Type": "ME", "Code": "for(u) (harvest(8,u) moveaway(Worker,u) train(Worker,16,EnemyDir)) for(u) (build(Barrack,3,Up,u)) for(u) (attack(Worker,weakest,u))"}, {"Player": "P8", "STT": 0.0, "LIR": 0.0, "NS": 0.0, "A3N": 0.0, "TOTAL": 0.0, "Test": "L9-42849689", "Type": "LE", "Code": "for(u) (train(Worker,5,Up)) if(HaveQtdUnitsbyType(Ranged,8)) (build(Barrack,2,Right)) for(u) (attack(Worker,mostHealthy,u) harvest(8,u))"}, {"Player": "P9", "STT": 2.0, "LIR": 0.0, "NS": 0.0, "A3N": 0.0, "TOTAL": 2.0, "Test": "L9x8-31696705", "Type": "LE", "Code": "for(u) (train(Worker,5,Right)) for(u) (attack(Worker,lessHealthy,u) harvest(1,u) train(Ranged,13,Down) harvest(3,u) build(Barrack,2,Left,u))"}, {"Player": "P10", "STT": 0.0, "LIR": 0.0, "NS": 0.0, "A3N": 0.0, "TOTAL": 0.0, "Test": "L9x8-31696699", "Type": "ME", "Code": "for(u) (if(HaveUnitsToDistantToEnemy(Worker,4,u)) (build(Base,2,Down,u)) (harvest(1,u)) attack(Worker,lessHealthy,u) harvest(8,u)) for(u) (train(Worker,15,Right))"}, {"Player": "P11", "STT": 1.0, "LIR": 0.0, "NS": 0.0, "A3N": 0.0, "TOTAL": 1.0, "Test": "L9x8-31696699", "Type": "MP", "Code": "for(u) (train(Worker,4,Up) attack(Worker,lessHealthy,u) if(HaveQtdUnitsHarversting(1)) (build(Barrack,1,Down,u)) harvest(5,u) train(Heavy,3,EnemyDir) attack(Heavy,lessHealthy,u))"}, {"Player": "P12", "STT": 9.5, "LIR": 5.0, "NS": 7.0, "A3N": 10.0, "TOTAL": 31.5, "Test": "L9x8-31696705", "Type": "MP", "Code": "for(u) (train(Ranged,4,Up) harvest(6,u) train(Worker,6,Left)) build(Barrack,2,Right) attack(Ranged,closest) for(u) (moveToUnit(Worker,Ally,farthest,u)) moveToUnit(Ranged,Ally,lessHealthy)"}]}}, {"mode": "vega-lite"});
 </script>
 </div>
 
